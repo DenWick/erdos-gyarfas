@@ -8,7 +8,7 @@ An exact power-of-two cycle checker, a verified construction of the Markström g
 and a test suite that checks every claim against brute force and the literature.
 
 [![tests](https://github.com/DenWick/erdos-gyarfas/actions/workflows/tests.yml/badge.svg)](https://github.com/DenWick/erdos-gyarfas/actions/workflows/tests.yml)
-![python](https://img.shields.io/badge/python-3.9%2B-3776ab?logo=python&logoColor=white)
+![python](https://img.shields.io/badge/python-3.10%2B-3776ab?logo=python&logoColor=white)
 ![dependencies](https://img.shields.io/badge/dependencies-none-brightgreen)
 [![license](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
 

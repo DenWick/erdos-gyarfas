@@ -7,7 +7,7 @@ name = "erdos-gyarfas"
 version = "1.0.0"
 description = "Exact power-of-two cycle checker for the Erdős–Gyárfás conjecture"
 readme = "README.md"
-requires-python = ">=3.9"
+requires-python = ">=3.10"
 license = { text = "MIT" }
 authors = [{ name = "Denis-Alexandru Ionescu-Telibasa" }]
 dependencies = []
