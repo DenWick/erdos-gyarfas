@@ -1,0 +1,27 @@
+name: tests
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.9", "3.11", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install
+        run: pip install -e ".[dev]"
+      - name: Run tests
+        run: pytest -v
+      - name: Run checker on all named graphs
+        run: python -m erdos_gyarfas markstrom petersen heawood k4 cube c7 graphs/markstrom.txt --spectrum
+      - name: Re-derive the Markström graph from its construction
+        if: matrix.python-version == '3.13'
+        run: python scripts/derive_markstrom.py
