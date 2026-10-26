@@ -5,9 +5,13 @@
 **Does every graph with minimum degree 3 contain a cycle of length 4, 8, 16, 32, …?**
 
 An exact power-of-two cycle checker, a verified construction of the Markström graph,
-and a test suite that checks every claim against brute force and the literature.
+a test suite that checks every claim against brute force and the literature,
+and a 10-page paper on the conjecture.
+
+**[📄 Read the paper (PDF)](paper/erdos-gyarfas.pdf)**
 
 [![tests](https://github.com/DenWick/erdos-gyarfas/actions/workflows/tests.yml/badge.svg)](https://github.com/DenWick/erdos-gyarfas/actions/workflows/tests.yml)
+[![paper](https://github.com/DenWick/erdos-gyarfas/actions/workflows/paper.yml/badge.svg)](https://github.com/DenWick/erdos-gyarfas/actions/workflows/paper.yml)
 ![python](https://img.shields.io/badge/python-3.10%2B-3776ab?logo=python&logoColor=white)
 ![dependencies](https://img.shields.io/badge/dependencies-none-brightgreen)
 [![license](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
@@ -101,6 +105,18 @@ Write the cycle lengths of a graph in unary. The conjecture then asks whether a 
 
 L is not regular. Its lengths are not eventually periodic, and the pumping lemma breaks it directly. So a finite automaton cannot recognize the target set, and that rules out a whole family of "finite-state" arguments. This connection is what took the problem from a graph theory question to an automata course.
 
+## The paper
+
+[`paper/`](paper) holds the LaTeX source of the accompanying paper, [*The Erdős–Gyárfás Conjecture: Cycles of Power-of-Two Length, the Markström Graph, and Computational Approaches*](paper/erdos-gyarfas.pdf). It covers:
+
+- the history of the problem and the known partial results;
+- a proof that minimum degree 3 forces an even cycle, and why that argument cannot reach powers of two;
+- an explicit construction of the Markström graph, drawn in TikZ;
+- the search algorithm and how it is tested;
+- the link to formal languages.
+
+GitHub Actions compiles it on every change. To build it locally, run `cd paper && latexmk -pdf main.tex`.
+
 ## Project layout
 
 ```
@@ -113,6 +129,7 @@ tests/               pytest suite (incl. brute-force cross-check)
 scripts/             derivation of the Markström graph, figure generation
 graphs/              example edge-list files
 figures/             generated SVGs (light and dark)
+paper/               LaTeX source and compiled PDF
 ```
 
 ## References

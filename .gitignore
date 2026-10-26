@@ -23,3 +23,6 @@ dist/
 Thumbs.db
 .vscode/
 .idea/
+
+# Local LaTeX build output (the published PDF is paper/erdos-gyarfas.pdf)
+paper/main.pdf
