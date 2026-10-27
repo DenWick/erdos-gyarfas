@@ -1,0 +1,3 @@
+# Count the paper as documentation, so GitHub labels this repo as Python
+paper/** linguist-documentation
+*.pdf binary
